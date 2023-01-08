@@ -16,7 +16,7 @@ N/a
 To use this application:
 1) Open the random password generator in your browser.
 2) Select the red "Generate Password" buttton.
-3) Answer the prompts for password preferances
+3) Answer the prompts for password preferences
 4) Your random password should display in the text box
 
 ## Credits 
