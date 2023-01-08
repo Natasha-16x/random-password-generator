@@ -73,7 +73,6 @@ hasSpecialCharacters = confirm("Do you want to use special characters?");
     alert("Please select at least one character type.");
 };
 
-}
 
 // join character arrays together 
 var specialCharacters = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
@@ -82,8 +81,18 @@ var lowercaseCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'
 var uppercaseCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var possibleCharacters = [];
  let characterOptions = specialCharacters.concat(numericCharacters, lowercaseCharacters, uppercaseCharacters);
- // character options have joined together
+ // check character options have joined together
  console.log(characterOptions)
+
+ // pick random characters for password
+let finalPassword = "" 
+for (let i = 0; i <  numberOfCharacters; i++) {
+  let rp =[Math.floor(Math.random() * characterOptions.length)];
+  finalPassword = finalPassword + characterOptions[rp];
+}
+return finalPassword; 
+}
+
 
 
 // Get references to the #generate element
