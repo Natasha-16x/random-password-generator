@@ -1,100 +1,17 @@
-// 1. prompt user for password critera
-// a) password length between 10 and 64 
-// b) special char, upper case, lowercase, numbers
-// 2 validate the input. (ensure password length meets criteria and types of characters chosen)
-// 3) Generate password
-// 4) Dispay password to the page
-
-
 // Array of special characters to be included in password
-var specialCharacters = [
-  '@',
-  '%',
-  '+',
-  '\\',
-  '/',
-  "'",
-  '!',
-  '#',
-  '$',
-  '^',
-  '?',
-  ':',
-  ',',
-  ')',
-  '(',
-  '}',
-  '{',
-  ']',
-  '[',
-  '~',
-  '-',
-  '_',
-  '.'
-];
+ var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',',')',
+  '(', '}', '{', ']', '[', '~', '-', '_', '.'];
 
 // Array of numeric characters to be included in password
-var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+ var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']; 
 
 // Array of lowercase characters to be included in password
-var lowerCasedCharacters = [
-  'a',
-  'b',
-  'c',
-  'd',
-  'e',
-  'f',
-  'g',
-  'h',
-  'i',
-  'j',
-  'k',
-  'l',
-  'm',
-  'n',
-  'o',
-  'p',
-  'q',
-  'r',
-  's',
-  't',
-  'u',
-  'v',
-  'w',
-  'x',
-  'y',
-  'z'
-];
+  var lowerCasedCharacters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r',
+  's','t','u','v','w','x','y','z']; 
 
 // Array of uppercase characters to be included in password
-var upperCasedCharacters = [
-  'A',
-  'B',
-  'C',
-  'D',
-  'E',
-  'F',
-  'G',
-  'H',
-  'I',
-  'J',
-  'K',
-  'L',
-  'M',
-  'N',
-  'O',
-  'P',
-  'Q',
-  'R',
-  'S',
-  'T',
-  'U',
-  'V',
-  'W',
-  'X',
-  'Y',
-  'Z'
-];
+var upperCasedCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P', 'Q','R',
+'S','T','U','V','W','X','Y','Z'];  
 
 
 // 1. prompt user for password critera
@@ -103,9 +20,7 @@ var upperCasedCharacters = [
 // 2 validate the input. (ensure password length meets criteria and types of characters chosen)
 // Function to prompt user for password options
 
-
-// Function for getting a random element from an array
-
+// function to prompt user for password characters
 // Function to generate password with user input
 function generatePassword() {
 var specialCharacters = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
@@ -131,8 +46,8 @@ hasSpecialCharacters = confirm("Do you want to use special characters?");
     alert("Your password will NOT include special characters.");
   }
 
-  hasNumbericCharacters = confirm("Do you want to use numeric characters?");
-  if (hasNumbericCharacters) {
+  hasNumericCharacters = confirm("Do you want to use numeric characters?");
+  if (hasNumericCharacters) {
     alert("Your password will include numbers.");
   }
   else {
@@ -154,14 +69,21 @@ hasSpecialCharacters = confirm("Do you want to use special characters?");
     alert("Your password will NOT include uppercase characters.");
   }
 
-  if (hasSpecialCharacters === false && hasNumbericCharacters === false && hasLowercaseCharacters === false && hasUppercaseCharacters === false) {
+  if (hasSpecialCharacters === false && hasNumericCharacters === false && hasLowercaseCharacters === false && hasUppercaseCharacters === false) {
     alert("Please select at least one character type.");
 };
 
 }
 
-
-
+// join character arrays together 
+var specialCharacters = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
+var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var lowercaseCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var uppercaseCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var possibleCharacters = [];
+ let characterOptions = specialCharacters.concat(numericCharacters, lowercaseCharacters, uppercaseCharacters);
+ // character options have joined together
+ console.log(characterOptions)
 
 
 // Get references to the #generate element
